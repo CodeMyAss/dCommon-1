@@ -1,0 +1,47 @@
+package me.technopvp.common.commands;
+
+import me.technopvp.common.dCommon;
+import me.technopvp.common.enums.Permissions;
+import me.technopvp.common.enums.Source;
+import me.technopvp.common.enums.SourceType;
+import me.technopvp.common.enums.Permissions.Permission;
+import me.technopvp.common.utility.Utils;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+@Source(SourceType.PLAYER)
+@Permissions(Permission.MOD)
+public class Command_fakeleave extends CommonCommand {
+	dCommon plugin = dCommon.instance;
+	
+	public boolean run(CommandSender sender, Command cmd, String[] args) {
+		Player player = (Player)sender;
+		if (!player.hasPermission("fleave.yes") || !player.hasPermission("fakejoin.yes")) {
+			noPermission();
+			return true;
+		}
+		if (args.length == 0) {
+			if (Utils.isVip(player)) {
+				Bukkit.broadcastMessage(Gold + "" + Gold + ChatColor.BOLD + player.getName() + " has left the game");
+		}else {
+			Bukkit.broadcastMessage(ChatColor.WHITE + player.getName() + " has left the game");	
+			return true;
+		}
+		} 
+		StringBuilder str = new StringBuilder();
+		for (int i = 0; i < args.length; i++) {
+			str.append(args[i] + " ");
+		}
+		
+	    if (args.length == 1) {
+	    	Bukkit.broadcastMessage(White + str.toString() + "has left the game");
+	    	return true;
+	    	
+	    }
+	    return true;
+}
+}

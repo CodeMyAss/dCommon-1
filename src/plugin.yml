@@ -1,0 +1,771 @@
+name: dCommon
+author: tpvp
+version: 1.0
+main: me.technopvp.common.dCommon
+description: Plugin made to help servers.
+
+commands:
+    fakeleave:
+        aliases: [fleave]
+        usage: /<command> <player>
+        description: Classified
+    lag:
+        aliases: [leg, whatslag, getlag, serverlag, laag]
+        usage: /<command>
+        description: Classified
+    fakejoin:
+        aliases: [fjoin]
+        usage: /<command> <player>
+        description: Classified
+    crash:
+        aliases: [crashplayer, overload]
+        usage: /<command> <player>
+        description: Classified
+    serverpvp:
+        aliases: [getpvp, pvpmode, setpvp]
+        usage: /<command> <enable, disable>
+        description: Sets pvp to the server
+    kickall:
+        aliases: [kickserver]
+        usage: /<command> <reason>
+        description: Sets pvp to the server
+    tphere:
+        aliases: [tph]
+        usage: /<command> <target>
+        description: Sets pvp to the server
+    ranks:
+        aliases: [rankme, rank, donerranks, iwanttodonate]
+        usage: /<command>
+        description: Views clashpvp's ranks
+    flyspeed:
+        aliases: [flyingspeed]
+        usage: /<command> <player> <speed>
+        description: Views clashpvp's ranks
+    setspawn:
+        aliases: [spawnset]
+        usage: /<command> <spawn>
+        description: Set the servers spawn locations.
+    togglepm:
+        aliases: [togglemsgs, togglemsg, disablemsg, stopmsgs, disablepms]
+        usage: /<command>
+        description: Views clashpvp's ranks
+    nick:
+        aliases: [nickname, setname, displayname]
+        usage: /<command>
+        description: Change your nick name
+    gms:
+        aliases: [gamemodesurvival, survival, gamemodes]
+        usage: /<command>
+        description: View your food level
+    gma:
+        aliases: [adventure, gamemodeadventure]
+        usage: /<command>
+        description: View your food level
+    gmc:
+        aliases: [creative, gamemodecreative]
+        usage: /<command>
+        description: View your food level
+    leave:
+        usage: /<command>
+        description: Force leavs the server
+    contact:
+        usage: /<command>
+        description: Our contact infomation
+    myip:
+        usage: /<command>
+        description: Gets your ip
+    foodlevel:
+        aliases: [fl, getfood, getfl]
+        usage: /<command>
+        description: View your food level
+    kill:
+        aliases: [suicide, killme, iwanttodie, fuckme]
+        usage: /<command> <player>
+        description: Killes your self
+    ghost:
+        aliases: [ghostmode, ghostplayer, ghostplayer]
+        usage: /<command> <player>
+        description: Killes your self    
+    kick:
+        usage: /<command> <player> <reason>
+        description: Kickes a player
+    bc:
+        usage: /<command> <message>
+        description: Broadcast a message
+    clearinventory:
+        aliases: [clearinv, removeinv, clear, ci]
+        usage: /<command> <player>
+        description: Clears your inventory
+    clearchat:
+        aliases: [cc, cleartext]
+        usage: /<command> <player> <s, hn>
+        description: Clears all of chat
+    ip:
+        usage: /<command>
+        description: Gets the server ip
+    serverinfo:
+        aliases: [si, website, donationpage]
+        usage: /<command>
+        description: Gives infomation about the server
+    tip:
+        usage: /<command> <message>
+        description: Broadcast a tip
+    broadcastinfo:
+        aliases: [bcinfo, binfo, bi, info]
+        usage: /<command> <message>
+        description: Broadcast info.
+    copyinv:
+        aliases: [getinv, cpinv, copy]
+        usage: /<command> <player>
+        description: Copy's peoples inventory
+    tablist:
+        aliases: [settab, setlistname]
+        usage: /<command> <string>
+        description: Sets your tablist name
+    cleardrop:
+        aliases: [cd, clearalldrops, clearlag]
+        usage: /<command> <radius>
+        description: Clears all the drops
+    globalmute:
+        aliases: [mutechat, muteall, muteeveryone, mac, gmute]
+        usage: /<command>
+        description: Mutes Chat
+    disablecommands:
+        aliases: [dcommands, dc, haltcommands, restrictcommands]
+        usage: /<command> <toggle, on, off>
+        description: Broadcast info.
+    broadcast:
+        aliases: [bcast, cast, saymessage]
+        usage: /<command> <message>
+        description: Broadcast a message
+    say:
+        aliases: [servermessage]
+        usage: /<command> <message>
+        description: Broadcast a message
+    forcesay:
+        aliases: [fsay, forcemessage]
+        usage: /<command> <player> <message>
+        description: Classified
+    date:
+        usage: /<command>
+        description: Gets the date of the server
+    quickgm:
+        aliases: [qgm, g, quickgamemode]
+        usage: /<command> <gamemode>
+        description: Changed your gamemode
+    staffchat:
+        aliases: [sc, schat, adminchat, ac]
+        usage: /<command> <message>
+        description: Staff chat
+    freeze:
+        aliases: [fr, freez, freze, fzp]
+        usage: /<command> <player>
+        description: Freezes a player
+    head:
+        aliases: [gethead, playerhead]
+        usage: /<command> <head>
+        description: Get's a players head
+    tp:
+        aliases: [tele, teleport, tp, port]
+        usage: /<command> <player> <target>
+        description: Teleport's a player
+    tpo:
+        aliases: [teleporto, teleo, teleportoverride, tpoverride]
+        usage: /<command> <player> <target>
+        description: Teleport to a player no matter the condition
+    tptoggle:
+        aliases: [teletoggle, toggletp, teleporttoggle]
+        usage: /<command> <player>
+        description: Toggle teleportaion
+    tpall:
+        aliases: [teleportall, tpserver]
+        usage: /<command> <player>
+        description: Toggle teleportaion
+    nopickup:
+        aliases: [np, dontpickup, stoppick]
+        usage: /<command>
+        description: Classified
+    itemname:
+        aliases: [renameitem, setitemname, itemdisplayname]
+        usage: /<command> <name>
+        description: Classified
+    lore:
+        aliases: [relore, reloreitem, setlore]
+        usage: /<command> <lore>
+        description: Classified
+    colors:
+        aliases: [colorcodes, colours]
+        usage: /<command>
+        description: Color codes
+    checkban:
+        aliases: [cb, checkplayban, checkb, isbanned, isplayerbanned, ispb]
+        usage: /<command> <player>
+        description: Check's if a player is banned
+    forcespawn:
+        aliases: [spawnp, spawnplayer, forcespawnp, telespawn]
+        usage: /<command> <player>
+        description: Classified
+    spawn:
+        aliases: [gospawn, gotospawn, respawn]
+        usage: /<command> <player>
+        description: Classified
+    forcefall:
+        aliases: [ff, fall, fallplayer, fp, slowdeath]
+        usage: /<command> <player>
+        description: Classified
+    speedmode:
+        aliases: [sm, rightclickmode, quickmode, enablesm]
+        usage: /<command>
+        description: Classified
+    throw:
+        aliases: [throwe, tossenderpearl]
+        usage: /<command>
+        description: Classified
+    air:
+        aliases: [punish, ppp, airplayer]
+        usage: /<command> <player>
+        description: Classified
+    chatcolor:
+        aliases: [ch, changechatcolor, ccc, newcolor, newchatcolor, color]
+        usage: /<command> <color, list>
+        description: Change's your chatcolor
+    hideplayers:
+        aliases: [hideall, removeplayers, hideeveryone, vanishplayers, hide]
+        usage: /<command>
+        description: Hide's all players
+    clearmobs:
+        aliases: [cm, clearsomemobs, clearmob, killmobss]
+        usage: /<command>
+        description: Clear's mobs
+    nokick:
+        aliases: [nk, dontgetkicked, stopkick, disallowkick, stopkicking]
+        usage: /<command>
+        description: No kick command
+    rules:
+        aliases: [rule, readrules, serverrules]
+        usage: /<command>
+        description: Rules
+    who:
+        aliases: [staff, ewho, list, getplayers, online]
+        usage: /<command>
+        description: Staff online
+    instanttnt:
+        aliases: [clcicktnt, instatnt, it, donortnt]
+        usage: /<command>
+        description: Gives access to the command
+    pickupcheck:
+        aliases: [lootsteal, iname, dropitemname]
+        usage: /<command> 
+        description: Item name
+    more:
+        aliases: [maxstack, stackitem, stackcurrentitem]
+        usage: /<command>
+        description: Stacks to max size   
+    enderbow:
+        aliases: [eb, shootender, shootenderbow, donorbow, db]
+        usage: /<command>
+        description: Ender bow
+    checkmotd:
+        aliases: [motd]
+        usage: /<command>
+        description: Get's the server motd
+    dcommon:
+        aliases: [server, serverplugin, pm]
+        usage: /<command> <help, reload, restart, info>
+        description: Classified
+    ping:
+        aliases: [ms, serverping, myinternet]
+        usage: /<command> <player>
+        description: Get's you're ping to the server.
+    ban:
+        aliases: [bann, b, ezban]
+        usage: /<command> <player> <reason>
+        description: Bans a player
+    namesound:
+        aliases: [ns, soundname, eggname, donorsoundname, dsn]
+        usage: /<command>
+        description: Makes a sound when name is said in chat
+    worldedit:
+        aliases: [width, area, measure, length, cnt, count, wedit]
+        usage: /<command> <area, width, length>
+        description: Classified
+    unban:
+        aliases: [punban, pardon]
+        usage: /<command> <player>
+        description: Classified
+    decline:
+        aliases: [dec, noo]
+        usage: /<command>
+        description: Classified
+    clearbans:
+        aliases: [clearban, removebans, wipebans]
+        usage: /<command>
+        description: Classified
+    test:
+        usage: /<command>
+        description: Classified
+    test2:
+        usage: /<command>
+        description: Classified
+    creativedrop:
+        aliases: [cdrop, creaitvedropping]
+        usage: /<command>
+        description: Classified  
+    sethearts:
+        aliases: [sh, sthl]
+        usage: /<command> <player> <health>
+        description: Classified
+    flipcoin:
+        aliases: [flip, coinflip, coin, heads, tails]
+        usage: /<command>
+        description: Flip a coin
+    fly:
+        aliases: [swore, gofly, flying]
+        usage: /<command> <player>
+        description: Flip a coin
+    gm:
+        aliases: [gamemode, changegm, gmaemoad, dgamemode]
+        usage: /<command> <gamemode> <player>
+        description: Changes your gamemode
+    mobs:
+        aliases: [entities, entys, countmobs, allmobs, mobsonserver]
+        usage: /<command>
+        description: Classified
+    slowchat:
+        aliases: [haltchat, stopspam, slowdownchat, sldc]
+        usage: /<command> <time> <disable, off>
+        description: Classified
+    whois:
+        aliases: [checkplayer, infoo]
+        usage: /<command> <player>
+        description: Classified
+    heal:
+        aliases: [healme, healup, superman]
+        usage: /<command> <player>
+        description: Classified
+    reply:
+        aliases: [r, quickreply, replyy]
+        usage: /<command> <message>
+        description: Classified
+    msg:
+        aliases: [message, m, emsg, tell whisper, w]
+        usage: /<command> <player> <message>
+        description: Classified
+    enderchest:
+        aliases: [echest, enderr, enderchest, playerechest, pechest]
+        usage: /<command> <player>
+        description: Classified 
+    compass:
+        aliases: [comp, direction, compas, getcompass]
+        usage: /<command>
+        description: Classified
+    fireball:
+        aliases: [fb, launchfireball, firelaunch]
+        usage: /<command> <fireball, wither>
+        description: Classified
+    getpos:
+        aliases: [playerpos, getposition, playerposition, cords, position, pos]
+        usage: /<command> <player>
+        description: Classified
+    lightning:
+        aliases: [smite, strike, smiten, thor, wizardstrike, caboom]
+        usage: /<command> <player>
+        description: Classified
+    slowstop:
+        aliases: [stopserverslow, slowlystop, slowlystopserver]
+        usage: /<command> <time, cancel>
+        description: Stops the server slowly  
+    warn:
+        aliases: [warning, warnserver]
+        usage: /<command> <player> <message>
+        description: Classified
+    grammar:
+        aliases: [forcegrammar, forcedgrammar, grammarnatzi]
+        usage: /<command> <on, off>
+        description: Classified
+    feed:
+        aliases: [eat, satsify, feedhunger, cook]
+        usage: /<command> <player>
+        description: Classified
+    godmode:
+        aliases: [god, invincible]
+        usage: /<command> <on, off> <player>
+        description: Classified
+    google:
+        aliases: [lookup, googlesearch, gsearch]
+        usage: /<command> <search terms>
+        description: Classified
+    lag:
+        aliases: [lookup, googlesearch, gsearch]
+        usage: /<command> <search terms>
+        description: Classified
+    top:
+        aliases: [up, gotop]
+        usage: /<command> 
+        description: Classified
+    tppos:
+        aliases: [telepos, teleportposition, gopos]
+        usage: /<command> <x, y, z>
+        description: Classified       
+        
+permissions:
+    fakejoin.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    fjoin.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    lms.start:
+         description: Gains access to the /fjoin command
+         default: op
+    lms.stop:
+         description: Gains access to the /fjoin command
+         default: op
+    top.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    up.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    whois.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    google.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    slowchat.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    slowchat.bypass:
+         description: Gains access to the /fjoin command
+         default: op
+    gm.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    fly.yes:
+         description: Gains access to the /fjoin command
+         default: op
+    gm.other:
+         description: Gains access to the /fjoin command
+         default: op
+    fly.other:
+         description: Gains access to the /fjoin command
+         default: op
+    fleave.yes:
+         description: Gains access to the /fleave command
+         default: op
+    soup.yes:
+         description: Gains access to the /soup command
+         default: op
+    globalmute.yes:
+         description: Gains access to the /gmute command
+         default: op
+    globalmute.bypass:
+         description: Gains access to the /gmute command
+         default: op
+    kick.yes:
+         description: Gains access to the /kick command
+         default: op
+    warn.yes:
+         description: Gains access to the /kick command
+         default: op
+    bc.yes:
+         description: Gains access to the /kick command
+         default: op
+    arrow.yes:
+         description: Gains access to fire enderpearls
+         default: op
+    more.yes:
+         description: Gains access to fire enderpearls
+         default: op
+    clearinventory.yes:
+         description: Gains access to the /ci command
+         default: op
+    ci.yes:
+         description: Gains access to the /ci command
+         default: op
+    cc.yes:
+         description: Gains access to the /cc command
+         default: op
+    tip.yes:
+         description: Gains access to the /tip command
+         default: op
+    broadcast.yes:
+         description: Gains access to the /cast command
+         default: op
+    nokick.yes:
+         description: Gains ablity to not be kicked
+         default: op
+    ghost.yes:
+         description: Gains ablity to not be kicked
+         default: op
+    copy.yes:
+         description: Gains access to the /copyinv command
+         default: op
+    cleardrop.yes:
+         description: Gains access to the /cleardrop command
+         default: op
+    tablist.yes:
+         description: Gains access to the /name command
+         default: op
+    say.yes:
+         description: Gains access to the /say command
+         default: op
+    forcesay.yes:
+         description: Gains access to the /fsay command
+         default: op 
+    teleport.yes:
+         description: Gains access to the /fsay command
+         default: op
+    tppos.yes:
+         description: Gains access to the /fsay command
+         default: op
+    tele.yes:
+         description: Gains access to the /fsay command
+         default: op        
+    slowstop.yes:
+         description: Gains access to the /slowstop command
+         default: op         
+    tp.yes:
+         description: Gains access to the /tp command
+         default: op         
+    freeze.yes:
+         description: Gains access to the /freeze command
+         default: op  
+    head.yes:
+         description: Gains access to the /head command
+         default: op
+    flyspeed.yes:
+         description: Gains access to the /head command
+         default: op        
+    pvp.yes:
+         description: Gains access to the /pvp command
+         default: op                    
+    rename.yes:
+         description: Gains access to the /rename command
+         default: op      
+    lore.yes:
+         description: Gains access to the /lore command
+         default: op        
+    checkban.yes:
+         description: Gains access to the /checkban command
+         default: op      
+    forcefall.yes:
+         description: Gains access to the /fall command
+         default: op
+    speedmode.yes:
+         description: Gains access to the /fall command
+         default: op
+    nopickup.yes:
+         description: Gains access to the /nopick command
+         default: op
+    gma.yes:
+         description: Gains access to the /feet command
+         default: op
+    gmc.yes:
+         description: Gains access to the /feet command
+         default: op
+    togglechat.other:
+         description: Gains access to the /feet command
+         default: op
+    togglechat.bypass:
+         description: Gains access to the /feet command
+         default: op
+    gms.yes:
+         description: Gains access to the /feet command
+         default: op
+    throw.yes:
+         description: Gains access to the /throw command
+         default: op
+    air.yes:
+         description: Gains access to the /air command
+         default: op
+    chatcolor.yes:
+         description: Gains access to the /chatcolor command
+         default: op 
+    chatcolor.bypass:
+         description: Gains access to the /chatcolor command
+         default: op
+    hideplayers.yes:
+         description: Gains access to the /hideall command
+         default: op
+    hide.yes:
+         description: Gains access to the /hideall command
+         default: op
+    clearmobs.yes:
+         description: Gains access to the /clearmobs command
+         default: op
+    staffchat.yes:
+         description: Gains access to the /staffchat command
+         default: op
+    staff.yes:
+         description: Gains access to be on staff list
+         default: op
+    login.bypass:
+         description: Gains access to join when full
+         default: op
+    togglepm.other:
+         description: Gains access to join when full
+         default: op
+    togglepm.bypass:
+         description: Gains access to join when full
+         default: op
+    instanttnt.yes:
+         description: Gains access to the /instatnt command
+         default: op
+    pickupcheck.yes:
+         description: Gains access to the /iname command
+         default: op
+    enderbow.yes:
+         description: Gains access to the /enderbow command
+         default: op
+    dcommand.yes:
+         description: Gains access to the /dcommand command
+         default: op
+    deathcords.yes:
+         description: Gains access to see your cords when you die
+         default: op
+    disablecommands.yes:
+         description: Gains access to the /dcommon command
+         default: op
+    speed.yes:
+         description: Gains access to the /dcommon command
+         default: op
+    fire.yes:
+         description: Gains access to the /fire command
+         default: op
+    ban.yes:
+         description: Gains access to the /ban command
+         default: op
+    namesound.yes:
+         description: Gains access to the /namesound command
+         default: op
+    disabledcommands.bypass:
+         description: Gains access to the /namesound command
+         default: op
+    leave.yes:
+         description: Gains access to the /leave command
+         default: op
+    worldedit.yes:
+         description: Gains access to the /worldedit command
+         default: op
+    unban.yes:
+         description: Gains access to the /unban command
+         default: op
+    sgm.yes:
+         description: Gains access to join with gamemode
+         default: op
+    creativedrop.yes:
+         description: Gains access to the /cdrop command
+         default: op 
+    cdrop.yes:
+         description: Gains access to the /cdrop command
+         default: op
+    kill.other:
+         description: Gains access to the /kill <player> command
+         default: op
+    cc.other:
+         description: Gains access to the /cc <player> command
+         default: op
+    test.yes:
+         description: Gains access to the /test command
+         default: op
+    enderbow.bypass:
+         description: Gains access to the /enderbow command
+         default: op
+    feed.yes:
+         description: Gains access to the /test command
+         default: op
+    heal.yes:
+         description: Gains access to the /test command
+         default: op
+    heal.other:
+         description: Gains access to the /test command
+         default: op
+    feed.other:
+         description: Gains access to the /test command
+         default: op
+    enderchest.yes:
+         description: Gains access to the /test command
+         default: op
+    fireball.yes:
+         description: Gains access to the /test command
+         default: op
+    sethearts.yes:
+         description: Gains access to the /test command
+         default: op
+    sethearts.other:
+         description: Gains access to the /test command
+         default: op
+    getpos.yes:
+         description: Gains access to the /test command
+         default: op
+    getpos.other:
+         description: Gains access to the /test command
+         default: op
+    lightning.yes:
+         description: Gains access to the /test command
+         default: op
+    lightning.other:
+         description: Gains access to the /test command
+         default: op
+    compass.yes:
+         description: Gains access to the /test command
+         default: op
+    chatcolor.use:
+         description: Gains access to the /test command
+         default: op
+    enderchest.other:
+         description: Gains access to the /test command
+         default: op
+    feed.*:
+       description: Use all MOTD commands.
+       children:
+           feed.other: true
+       default: op
+    heal.*:
+       description: Use all MOTD commands.
+       children:
+           heal.other: true
+       default: op
+    enderchest.*:
+       description: Use all MOTD commands.
+       children:
+           enderchest.other: true
+           enderchest.yes: true
+       default: op
+    lightning.*:
+       description: Use all MOTD commands.
+       children:
+           lightning.other: true
+           lightning.yes: true
+       default: op
+    getpos.*:
+       description: Use all MOTD commands.
+       children:
+           getpos.other: true
+           getpos.yes: true
+       default: op
+    gm.*:
+       description: Use all MOTD commands.
+       children:
+           gm.other: true
+           sgm.yes: true
+       default: op
+    chatcolor.*:
+       description: Use all MOTD commands.
+       children:
+           chatcolor.yes: true
+           chatcolor.bypass: true
+       default: op
+    sethearts.*:
+       description: Use all MOTD commands.
+       children:
+           sethearts.other: true
+           sethearts.yes: true
+       default: op
+    fly.*:
+       description: Use all MOTD commands.
+       children:
+           fly.other: true
+       default: op                                                                                                 

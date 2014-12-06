@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/WorldEdit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/Vault-1.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/Essentials.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/WorldGuard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Server/plugins/EssentialsGroupManager.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/Teams.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/bukkit-1.7.9.jar" sourcepath="C:/Users/Adam/Desktop/Eclipse Libraries/Eclipse Coding/Bukkit-Bukkit-f210234">
+		<attributes>
+			<attribute name="javadoc_location" value="http://jd.bukkit.org/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Adam/Desktop/Eclipse Libraries/craftbukkit8.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

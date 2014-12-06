@@ -1,0 +1,94 @@
+no_permission: '&7You do not have access to this command'
+#This is the message that will appear when you they dont have access to a command
+
+join_message: '<none>'
+#This message will appear when a player joins
+
+leave_message: '<none>'
+#This message will appear when a player leaves
+ 
+not_banned: '&7Player &c%target &7is not banned from %server.'
+#Message will appear when a player is not banned, /unban
+
+unban_message: '&a%target has been unbanned from %server'
+#Message will be broadcasted to the server when player is unbanned, /unban
+
+chat_muted: '&7&lThe chat has been muted for all players only mods/admins can talk'
+#Message will be broadcasted when the chat is muted, /gmute
+
+chat_unmuted: '&c&lThe chat has been unmuted you may now speak'
+#Message will be broadcasted when the chat is unmuted, /gmute
+
+talk_while_chat_muted: '&cYou can not talk while chat is muted.'
+#Message will appear when a player attempts to speak while chat is muted
+
+copyinv_message: '&7Copying &c%target^s &7inventory.'
+#Message for copying someones inventory, /copyinv
+
+broadcast_info: '&7[&cINFO&7] &7%message.'
+#Message that will be broadcasted when sending information, /binfo
+
+broadcast_tip: '&eTIP &b%message'
+#Message that will be broadcasted when you send a tip, /tip
+
+broadcast: '&4Broadcast &a%message -%player'
+#Message will be broadcasted when broadcasting a message, /broadcast
+
+command_kill_message: '&6You have been killed'
+#Message will appear when you kill your self command wise, /kill
+
+command_kill_target_message: '&7You have killed &c%target&7.'
+#Message will appear when you kill a player command wise, /kill
+
+command_mobs_message: '&7There are &c%mobs &7entites alive'
+#Message will appear when you count the mobs on the server, /mobs
+
+blank_broadcast_message: '%message'
+#Message will appear when you broadcast a blank message, /bc
+
+warn_broadcast_message: '&4WARNING &a%message'
+#Message will appear when you broadcast a blank message, /warn
+
+server_say_message: '&d[Server] %message -%player'
+#Message will appear when saying a message to the server, /say
+
+disallow_above_nether: '&cYou are not allowed to be above the nether'
+#Message will appear when the player trys to be ontop of the nether when its disabled
+
+void_error_message: '&cYou have fell an the void, please ask an admin to fix this error.'
+#Message will appear when the player falls in a void.
+
+ghost_mode_disable_message: '&7Ghost mode is now &cdisabled'
+#Message will appear when a player enables ghost mode.
+
+ghost_mode_enable_message: '&7Ghost mode is now &cenabled'
+#Message will appear when a player disables ghost mode.
+
+target_enable_ghost_mode: '&7You have &cenabled &7ghost mode for &c%target&7.'
+#Message will appear when a player enabled ghost mode for a target, /ghost
+
+target_disable_ghost_mode: '&7You have &cdisabled &7ghost mode for &c%target&7.'
+#Message will appear when a player disables ghost mode for a target, /ghost
+
+commands_disabled_message: '&7Commands are currently disabled right now.'
+
+
+
+          # Messages.yml Class Tips #
+               ## Quick Tips ##
+# You can use color codes in the config, example: death_messahe: '&cYou have been &6&lkilled!' #
+# You can use these short cuts to grab certin things from your message.yml #
+# example: 'no_permission: Sorry %player you cant use that command at %server' #
+# In game that would look like this "Sorry Notch you cant use that command on Minecraft" #
+# The sorce of the message will be at the end of the message if it has one #
+# example: chat_muted_message: 'Chat was muted' #
+#" Message will appear when you mute chat, /gmute "#
+# This sorce of the message is at the end here ^^ that's where the message is from.
+
+               ## Short cuts ##
+# %player - Get the players name(certin commands) #
+# %message - Get the message(certin commands) #
+# %target - Gets the targets name(certin commands) #
+# %donationpage - Gets the donation page(all commands, edit in config)#
+# %website - Gets the website of the server(all commands, edit in config)#
+# %server - Gets the server name(all commands, edit in config)#

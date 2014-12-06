@@ -1,0 +1,2 @@
+&7Welcome <displayname> to the server
+Players online: <online>

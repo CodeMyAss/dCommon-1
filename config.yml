@@ -1,0 +1,64 @@
+   ############################
+   # Server Information Below #
+   #   Feel free to edit to   #
+   #     you're likeings      #
+   ############################
+   # Put your server name here.
+   server-name: 'the server'
+   
+   # What do you want the kick message to be?
+   KickReason: '&cYou have been kicked by %player%reason'
+   
+   # What do you want the kick broadcast message to be?
+   KickBroadcastMessage: '&a%target has been kicked by %player%reason'
+   
+   # What do you want the ban color to be?   
+   BanColor: '&a'
+   
+   # What should the speed mode value be when they do /sm?
+   speedmode-speed: 4
+   
+   # Should we allow users to be above the nether?
+   allow-above-nether: true
+   
+   # Should we allow users to fall into the void, or teleport them out?
+   allow-void-falling: false
+   
+   # Should we lanuch fireworks when a 'new' player joins?
+   join-fireworks: true
+   
+  # Announcer options.
+   announcer:
+   enabled: true
+
+  # Interval between announcements, in seconds.
+   interval: 100
+
+  # Prefix for all announcements.
+   prefix: '&7[&cServer&7]'
+   
+  # Announcement messages.
+   announcements:
+     - '&bMake sure to check out our website!'
+     - '&bHelp us by donating'
+     - '&bMake sure you read our rules.'
+   
+   # This is the caht format for all players.
+   chat-format: '&7[&3<group>&7] &f<<name>> <message>'
+   
+   ################################
+   #      Server Information      #
+   # All Server info will go here #
+   ################################
+   website: 'www.website.com'
+   email: 'technopvp@hotmail.com'
+   account: '%player'
+   server-ip: 'serverip.com'
+   donation-page: 'donate.server.com'
+   
+   #Tips:
+   # To announce a player do %player
+   # Set the value to '<none>' to make it blank
+   # Example: BcMessage: 'none'
+   # When you do /bc {text} it wont show anything before it
+   # Since you made it say 'nothing'.
