@@ -1,10 +1,10 @@
 package me.technopvp.common.commands;
 
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
-import me.technopvp.common.utility.config.SpawnConfig;
+import me.technopvp.common.utilities.config.SpawnConfig;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;

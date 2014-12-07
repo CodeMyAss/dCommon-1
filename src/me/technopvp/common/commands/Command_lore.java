@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
-import me.technopvp.common.enums.Permissions.Permission;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

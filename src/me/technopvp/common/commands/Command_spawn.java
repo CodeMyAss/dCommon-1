@@ -3,14 +3,14 @@ package me.technopvp.common.commands;
 import java.util.ArrayList;
 
 import me.technopvp.common.Lists;
-import me.technopvp.common.enums.Level;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
 import me.technopvp.common.managers.SpawnManager;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.config.SpawnConfig;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.config.SpawnConfig;
+import me.technopvp.common.utilities.enums.Level;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

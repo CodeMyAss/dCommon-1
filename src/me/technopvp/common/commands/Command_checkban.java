@@ -1,15 +1,15 @@
 package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.enums.Level;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.player.Ban;
-import me.technopvp.common.utility.player.User;
-import me.technopvp.common.utility.player.Ban.BanInfo;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.enums.Level;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
+import me.technopvp.common.utilities.player.Ban;
+import me.technopvp.common.utilities.player.User;
+import me.technopvp.common.utilities.player.Ban.BanInfo;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

@@ -4,12 +4,12 @@ import java.util.logging.Logger;
 
 import me.technopvp.common.api.GhostManager;
 import me.technopvp.common.commands.CommonCommand;
-import me.technopvp.common.enums.Level;
-import me.technopvp.common.enums.Permissions.PermissionUtils;
-import me.technopvp.common.enums.Source.SourceUtils;
 import me.technopvp.common.managers.InitializeManager;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.player.UserManager;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.enums.Level;
+import me.technopvp.common.utilities.enums.Permissions.PermissionUtils;
+import me.technopvp.common.utilities.enums.Source.SourceUtils;
+import me.technopvp.common.utilities.player.UserManager;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;

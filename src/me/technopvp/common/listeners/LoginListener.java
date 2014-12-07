@@ -1,11 +1,11 @@
 package me.technopvp.common.listeners;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.enums.Level;
-import me.technopvp.common.utility.CommonCore;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.player.Ban;
-import me.technopvp.common.utility.player.User;
+import me.technopvp.common.utilities.CommonCore;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.enums.Level;
+import me.technopvp.common.utilities.player.Ban;
+import me.technopvp.common.utilities.player.User;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;

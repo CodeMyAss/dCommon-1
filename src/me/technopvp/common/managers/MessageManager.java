@@ -1,10 +1,10 @@
 package me.technopvp.common.managers;
 
-import me.technopvp.common.enums.BroadcastType;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.enums.Permissions.PermissionUtils;
-import me.technopvp.common.utility.CommonCore;
-import me.technopvp.common.utility.StringUtils;
+import me.technopvp.common.utilities.CommonCore;
+import me.technopvp.common.utilities.StringUtils;
+import me.technopvp.common.utilities.enums.BroadcastType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
+import me.technopvp.common.utilities.enums.Permissions.PermissionUtils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

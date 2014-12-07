@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import me.technopvp.common.api.FancyApiReflectionHandler;
-import me.technopvp.common.api.FancyApiReflectionHandler.PackageType;
-import me.technopvp.common.api.FancyApiReflectionHandler.PacketType;
-import me.technopvp.common.api.FancyApiReflectionHandler.SubPackageType;
+import me.technopvp.common.api.fancymessage.FancyApiReflectionHandler;
+import me.technopvp.common.api.fancymessage.FancyApiReflectionHandler.PackageType;
+import me.technopvp.common.api.fancymessage.FancyApiReflectionHandler.PacketType;
+import me.technopvp.common.api.fancymessage.FancyApiReflectionHandler.SubPackageType;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

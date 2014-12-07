@@ -1,19 +1,19 @@
 package me.technopvp.common.managers;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.api.BarApi;
 import me.technopvp.common.api.GhostManager;
-import me.technopvp.common.bridge.VaultBridge;
+import me.technopvp.common.api.barapi.BarApi;
+import me.technopvp.common.integration.VaultBridge;
 import me.technopvp.common.listeners.ChatListener;
 import me.technopvp.common.listeners.JoinListener;
 import me.technopvp.common.listeners.LeaveListener;
 import me.technopvp.common.listeners.LoginListener;
 import me.technopvp.common.listeners.PlayerListener;
 import me.technopvp.common.listeners.RespawnListener;
-import me.technopvp.common.utility.config.MOTDConfig;
-import me.technopvp.common.utility.config.MessagesConfig;
-import me.technopvp.common.utility.config.SpawnConfig;
-import me.technopvp.common.utility.player.UserManager;
+import me.technopvp.common.utilities.config.MOTDConfig;
+import me.technopvp.common.utilities.config.MessagesConfig;
+import me.technopvp.common.utilities.config.SpawnConfig;
+import me.technopvp.common.utilities.player.UserManager;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;

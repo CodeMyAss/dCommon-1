@@ -3,7 +3,7 @@ package me.technopvp.common.managers;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import me.technopvp.common.utility.player.Ban;
+import me.technopvp.common.utilities.player.Ban;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

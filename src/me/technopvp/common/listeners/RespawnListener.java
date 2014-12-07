@@ -1,7 +1,7 @@
 package me.technopvp.common.listeners;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utility.config.SpawnConfig;
+import me.technopvp.common.utilities.config.SpawnConfig;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

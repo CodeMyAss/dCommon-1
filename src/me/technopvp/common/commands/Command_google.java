@@ -2,12 +2,12 @@ package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
 import me.technopvp.common.api.GoogleShortener;
-import me.technopvp.common.enums.Level;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.utility.Utils;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.enums.Level;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

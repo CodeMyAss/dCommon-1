@@ -4,13 +4,13 @@ import java.util.Random;
 
 import me.technopvp.common.Lists;
 import me.technopvp.common.dCommon;
-import me.technopvp.common.api.FancyMessage;
+import me.technopvp.common.api.fancymessage.FancyMessage;
 import me.technopvp.common.managers.MessageManager;
-import me.technopvp.common.utility.CommonCore;
-import me.technopvp.common.utility.StringUtils;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.player.PlayerUtils;
-import me.technopvp.common.utility.player.User;
+import me.technopvp.common.utilities.CommonCore;
+import me.technopvp.common.utilities.StringUtils;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.player.PlayerUtils;
+import me.technopvp.common.utilities.player.User;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

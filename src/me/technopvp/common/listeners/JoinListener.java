@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 import me.technopvp.common.Lists;
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utility.CommonCore;
-import me.technopvp.common.utility.StringUtils;
-import me.technopvp.common.utility.Utils;
-import me.technopvp.common.utility.player.User;
+import me.technopvp.common.utilities.CommonCore;
+import me.technopvp.common.utilities.StringUtils;
+import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.player.User;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

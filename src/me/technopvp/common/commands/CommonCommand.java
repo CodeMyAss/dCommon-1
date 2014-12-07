@@ -1,8 +1,8 @@
 package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utility.StringUtils;
-import me.technopvp.common.utility.CommonCore;
+import me.technopvp.common.utilities.CommonCore;
+import me.technopvp.common.utilities.StringUtils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

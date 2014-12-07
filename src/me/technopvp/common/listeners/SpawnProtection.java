@@ -1,7 +1,7 @@
 package me.technopvp.common.listeners;
 
 import me.technopvp.common.Lists;
-import me.technopvp.common.utility.player.LocationUtils;
+import me.technopvp.common.utilities.player.LocationUtils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;

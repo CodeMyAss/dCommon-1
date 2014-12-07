@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import me.technopvp.common.Lists;
 import me.technopvp.common.dCommon;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
 import me.technopvp.common.managers.MessageManager;
-import me.technopvp.common.utility.StringUtils;
+import me.technopvp.common.utilities.StringUtils;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

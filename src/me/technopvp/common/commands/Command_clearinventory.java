@@ -1,11 +1,11 @@
 package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.enums.Permissions;
-import me.technopvp.common.enums.Source;
-import me.technopvp.common.enums.SourceType;
-import me.technopvp.common.enums.Permissions.Permission;
-import me.technopvp.common.utility.player.InventoryUtils;
+import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Source;
+import me.technopvp.common.utilities.enums.SourceType;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
+import me.technopvp.common.utilities.player.InventoryUtils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
