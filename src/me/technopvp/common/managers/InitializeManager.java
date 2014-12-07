@@ -37,7 +37,7 @@ public class InitializeManager {
 		/* Genrates the 'playerdata'(users) folder. */
 		plugin.user = new UserManager(plugin);
 
-		/* Generates the spawn folder */
+		/* Generates the spawn folder's */
 		SpawnConfig.getInstance().generateSpawnConfig();
 
 		/* Get's the message.yml file */
