@@ -3,6 +3,7 @@ package me.technopvp.common.utilities;
 import java.util.Random;
 
 import me.technopvp.common.dCommon;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.utilities.enums.Level;
 
 import org.bukkit.Bukkit;
@@ -87,13 +88,13 @@ public class StringUtils {
 
 	public static String translate(String string) {
 		if (string == null) {
-			Utils.log(Level.MEDIUM, "Messges.yml file is missing a string.");
-			return Level.MEDIUM.getString + " This message is has no object.";
+			MessageManager.log(Level.MEDIUM, "Messges.yml file is missing a string.");
+			return " This message is has no object.";
 		}
 		string = string.replace("<none>", "");
-		string = string.replace("%server", Utils.serverName());
-		string = string.replace("%donatepage", Utils.dPage());
-		string = string.replace("%website", Utils.website());
+		string = string.replace("%server", StringUtils.getServerName());
+		string = string.replace("%donatepage", StringUtils.getDonationPage());
+		string = string.replace("%website", StringUtils.getWebsite());
 		string = string.replace("&", "§");
 		string = string.replace("^", "'");
 		return string;
@@ -141,15 +142,15 @@ public class StringUtils {
 		return permission;
 	}
 
-	public static String dpage() {
+	public static String getDonationPage() {
 		return plugin.getConfig().getString("donation-page");
 	}
 
-	public static String website() {
+	public static String getWebsite() {
 		return plugin.getConfig().getString("website");
 	}
 
-	public static String servername() {
+	public static String getServerName() {
 		return plugin.getConfig().getString("server-name");
 	}
 

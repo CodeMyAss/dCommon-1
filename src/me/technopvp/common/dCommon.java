@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import me.technopvp.common.api.GhostManager;
 import me.technopvp.common.commands.CommonCommand;
 import me.technopvp.common.managers.InitializeManager;
-import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.utilities.enums.Level;
 import me.technopvp.common.utilities.enums.Permissions.PermissionUtils;
 import me.technopvp.common.utilities.enums.Source.SourceUtils;
@@ -61,8 +61,8 @@ public class dCommon extends JavaPlugin {
 	  instance = this;
 	  initializeManager = new InitializeManager();
 
-	  Utils.log(Level.HIGH, "[" + this.getName() + "]" + " version " + this.getDescription().getVersion() + " has succesfully been enabled.");
-	  Utils.log(Level.MEDIUM, "[" + this.getName() + "]" + " Initialization class files have been loaded \nsuccesfully no erros found.");
+	  MessageManager.log(Level.HIGH, "[" + this.getName() + "]" + " version " + this.getDescription().getVersion() + " has succesfully been enabled.");
+	  MessageManager.log(Level.MEDIUM, "[" + this.getName() + "]" + " Initialization class files have been loaded \nsuccesfully no erros found.");
   }
 
 	public void onDisable() {
@@ -96,8 +96,8 @@ public class dCommon extends JavaPlugin {
 	                return dispatcher.noPermission();
 	            }
 	        } catch (Exception e) {
-	            Utils.log(Level.HIGH, "Unknown command error: " + e.getMessage());
-	            Utils.log(Level.HIGH, e.toString());
+	        	MessageManager.log(Level.HIGH, "Unknown command error: " + e.getMessage());
+	        	MessageManager.log(Level.HIGH, e.toString());
 	            sender.sendMessage(ChatColor.RED + "Command Error: " + e.getMessage());
 	            e.printStackTrace();
 	            return true;

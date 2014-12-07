@@ -2,12 +2,12 @@ package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
 import me.technopvp.common.api.GoogleShortener;
-import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.utilities.enums.Level;
 import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Source;
 import me.technopvp.common.utilities.enums.SourceType;
-import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,12 +19,12 @@ import com.google.common.base.Joiner;
 @Permissions(Permission.ANYONE)
 public class Command_google extends CommonCommand {
 	dCommon plugin = dCommon.instance;
-	
+
 	public boolean run(CommandSender sender, Command cmd, String[] args) {
 		Player player = (Player)sender;
-		
+
 		if (!player.hasPermission("google.yes")) {
-			noPermission();	
+			noPermission();
 			return true;
 		}
 		if (args.length > 0) {
@@ -40,7 +40,7 @@ public class Command_google extends CommonCommand {
 						sender.sendMessage("You can only use the '-c' flag as a player!");
 					}
 				} catch (Exception e) {
-					Utils.log(Level.HIGH, "Encountered a high error with /google");
+					MessageManager.log(Level.HIGH, "Encountered a high error with /google");
 					e.printStackTrace();
 				}
 		} else {

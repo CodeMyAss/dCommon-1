@@ -48,7 +48,7 @@ public class SpamManager {
 			event.setCancelled(true);
 
 			if (this.Warnings <= 0) {
-				new Ban(PlayerName, "Spamming", "Console");
+				new Ban(this.Player, "Spamming", "Console");
 				return;
 			}
 
@@ -92,7 +92,7 @@ public class SpamManager {
 	public void Silence(int seconds) {
 		this.Violations -= 1;
 		this.SilenceExpires = (System.currentTimeMillis() + seconds * 1000);
-		this.Player.sendMessage(ChatColor.RED + "You are muted for "  + ChatColor.GREEN + ChatColor.BOLD + seconds + ChatColor.RED + " seconds");
+		this.Player.sendMessage(ChatColor.RED + "You are muted for " + ChatColor.GREEN + ChatColor.BOLD + seconds + ChatColor.RED + " seconds");
 		this.Player.sendMessage(ChatColor.RED + "If you still spam, you will be" + ChatColor.GREEN + ChatColor.BOLD + " BANNED" + ChatColor.RED + "!");
 	}
 

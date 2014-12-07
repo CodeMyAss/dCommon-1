@@ -1,6 +1,7 @@
 package me.technopvp.common.integration;
 
 import me.technopvp.common.dCommon;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.utilities.enums.Level;
 
 import org.bukkit.Bukkit;
@@ -24,23 +25,21 @@ public class WorldEditBridge {
 	public static WorldEditPlugin getWorldEditPlugin() {
 		if (worldEditPlugin == null) {
 			try {
-				Plugin we = Bukkit.getServer().getPluginManager()
-						.getPlugin("WorldEdit");
+				Plugin we = Bukkit.getServer().getPluginManager().getPlugin("WorldEdit");
 				if (we != null) {
 					if (we instanceof WorldEditPlugin) {
 						worldEditPlugin = (WorldEditPlugin) we;
 					}
 				}
 			} catch (Exception ex) {
-				plugin.log.info(Level.HIGH.getString + ex);
+				MessageManager.log(Level.LOW, ex.toString());
 			}
 		}
 		return worldEditPlugin;
 	}
 
 	public static WorldGuardPlugin getWorldGuard() {
-		Plugin plugin = Bukkit.getServer().getPluginManager()
-				.getPlugin("WorldGuard");
+		Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
 
 		// WorldGuard may not be loaded
 		if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
@@ -57,7 +56,7 @@ public class WorldEditBridge {
 				return wep.wrapPlayer(player);
 			}
 		} catch (Exception ex) {
-			plugin.log.info(Level.HIGH.getString + ex);
+			MessageManager.log(Level.LOW, ex.toString());
 		}
 		return null;
 	}
@@ -69,21 +68,21 @@ public class WorldEditBridge {
 				return wep.getSession(player);
 			}
 		} catch (Exception ex) {
-			plugin.log.info(Level.HIGH.getString + ex);
+			MessageManager.log(Level.LOW, ex.toString());
 		}
 		return null;
 	}
 
 	/**
 	 * Undo a players worldedits the given amount.
-	 * 
+	 *
 	 * @param player
 	 *            - The given player.
 	 * @param amount
 	 *            - The given amount.
-	 * 
+	 *
 	 * @see WorldEditBridge.undo(tpvp, 2);
-	 * 
+	 *
 	 * @throws Exception
 	 *             if caused
 	 */
@@ -95,16 +94,15 @@ public class WorldEditBridge {
 				final BukkitPlayer bukkitPlayer = getBukkitPlayer(player);
 				if (bukkitPlayer != null) {
 					for (int i = 0; i < amount; i++) {
-						session.undo(session.getBlockBag(bukkitPlayer),
-								bukkitPlayer);
+						session.undo(session.getBlockBag(bukkitPlayer), bukkitPlayer);
 					}
 				}
 			}
 		} catch (Exception ex) {
-			plugin.log.info(Level.HIGH.getString + ex);
+			MessageManager.log(Level.LOW, ex.toString());
 		}
 	}
-	
+
 	public static void redo(Player player, int amount) {
 		try {
 			LocalSession session = getPlayerSession(player);
@@ -112,13 +110,12 @@ public class WorldEditBridge {
 				final BukkitPlayer bukkitPlayer = getBukkitPlayer(player);
 				if (bukkitPlayer != null) {
 					for (int i = 0; i < amount; i++) {
-						session.redo(session.getBlockBag(bukkitPlayer),
-								bukkitPlayer);
+						session.redo(session.getBlockBag(bukkitPlayer), bukkitPlayer);
 					}
 				}
 			}
 		} catch (Exception ex) {
-			plugin.log.info(Level.HIGH.getString + ex);
+			MessageManager.log(Level.LOW, ex.toString());
 		}
 	}
 
@@ -129,9 +126,8 @@ public class WorldEditBridge {
 				session.setBlockChangeLimit(limit);
 			}
 		} catch (Exception ex) {
-			plugin.log.info(Level.HIGH.getString + ex);
+			MessageManager.log(Level.LOW, ex.toString());
 		}
 	}
-	
 
 }

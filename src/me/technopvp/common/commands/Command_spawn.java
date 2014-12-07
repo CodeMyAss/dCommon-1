@@ -3,14 +3,14 @@ package me.technopvp.common.commands;
 import java.util.ArrayList;
 
 import me.technopvp.common.Lists;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.managers.SpawnManager;
-import me.technopvp.common.utilities.Utils;
 import me.technopvp.common.utilities.config.SpawnConfig;
 import me.technopvp.common.utilities.enums.Level;
 import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Source;
 import me.technopvp.common.utilities.enums.SourceType;
-import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -33,7 +33,7 @@ public class Command_spawn extends CommonCommand {
 		if (args.length == 0) {
 			if (!spawns.contains("default")) {
 				player.sendMessage(DarkRed + "Error: " + White + " the spawn location is not set.");
-				Utils.log(Level.FATAL, "Spawn location is not set. Perfom /setspawn");
+				MessageManager.log(Level.FATAL, "Spawn location is not set. Perfom /setspawn");
 				return true;
 			}
 				if (!spawns.contains(plugin.permission.getPrimaryGroup(player))) {

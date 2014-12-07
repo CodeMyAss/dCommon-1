@@ -45,7 +45,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.BrewEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
@@ -58,7 +57,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	FileConfiguration config = plugin.getConfig();
 
 	@EventHandler
-	public void onShootPearl(EntityShootBowEvent e) {
+	public void onPlayerShotEnderBow(EntityShootBowEvent e) {
 		if (e.getEntity() instanceof Player) {
 			Player player = (Player) e.getEntity();
 			if (Lists.enderbow.contains(player.getName())) {
@@ -70,7 +69,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void GodMode(EntityDamageEvent event) {
+	public void onPlayerDamagedWhileInGode(EntityDamageEvent event) {
 		if (event.getEntity() instanceof Player) {
 			Player player = (Player) event.getEntity();
 			if (User.getUserConfig(player.getName()).getBoolean("GodMode") == true) {
@@ -86,7 +85,7 @@ public class PlayerListener extends CommonCore implements Listener {
 
 	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void PotionEffectDone(BrewEvent event) {
+	public void onPlayerBrewingDone(BrewEvent event) {
 		for (Player all : Bukkit.getOnlinePlayers()) {
 			all.playEffect(event.getBlock().getLocation(), Effect.MOBSPAWNER_FLAMES, 1);
 		}
@@ -124,14 +123,14 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void BloodEffect(EntityDamageEvent e) {
-		DamageCause cause = e.getCause();
-		Random r = new Random();
-		Entity ey = e.getEntity();
-		if (ey instanceof Zombie | ey instanceof Spider | ey instanceof Skeleton) {
-			if (cause.equals(DamageCause.ENTITY_ATTACK)) {
+	public void onBlodEffectForMobs(EntityDamageEvent e) {
+		DamageCause damageCause = e.getCause();
+		Random random = new Random();
+		Entity entity = e.getEntity();
+		if (entity instanceof Zombie | entity instanceof Spider | entity instanceof Skeleton) {
+			if (damageCause.equals(DamageCause.ENTITY_ATTACK)) {
 				// The more the first number is increased the less chance there is.
-				if (r.nextInt(4) < 3) {
+				if (random.nextInt(4) < 3) {
 					e.getEntity().getLocation().getWorld().playEffect(e.getEntity().getLocation().add(0, 1, 0), Effect.STEP_SOUND, 152);
 				}
 			}
@@ -139,7 +138,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void onPlayerBreakItem(BlockBreakEvent e) {
+	public void onPlayerBreakWhileInSpeed(BlockBreakEvent e) {
 		Player player = e.getPlayer();
 		if (Lists.speedmode.contains(player.getName())) {
 			e.setCancelled(true);
@@ -148,7 +147,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void SpongeJumpEvent(PlayerMoveEvent event) {
+	public void onPlayerSpongeJumpEvent(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 
 		if (event.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SPONGE) {
@@ -163,7 +162,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void CreatveDrop(BlockBreakEvent e) {
+	public void onPlayerCreativeDroppingEvent(BlockBreakEvent e) {
 		Player player = e.getPlayer();
 		if (Lists.cdrop.contains(player.getName())) {
 			if (e.getPlayer().getGameMode() == GameMode.CREATIVE) {
@@ -173,7 +172,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void onDeathEvent(PlayerDeathEvent e) {
+	public void onPlayerDeathCordsEvent(PlayerDeathEvent e) {
 		Player player = e.getEntity();
 		Location loc = player.getLocation();
 		if (player instanceof Player) {
@@ -196,7 +195,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void onItemClickEvent(PlayerInteractEvent e) {
+	public void onPlayerClickWhileInSpeedMode(PlayerInteractEvent e) {
 		Player player = e.getPlayer();
 		if (Lists.speedmode.contains(player.getName())) {
 			if (e.getAction() == Action.LEFT_CLICK_AIR) {
@@ -206,7 +205,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler(priority = EventPriority.HIGH)
-	public void BlockPlaceEvent(PlayerInteractEvent event) {
+	public void onPlayerInteractWithTnt(PlayerInteractEvent event) {
 		if (Lists.instatnt.contains(event.getPlayer().getName())) {
 			if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (event.getClickedBlock().getType().equals(Material.TNT)) {
@@ -218,21 +217,13 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void onPlayerNoKick(PlayerKickEvent event) {
-		Player player = event.getPlayer();
-		if (Lists.nokick.contains(player.getName())) {
-			event.setCancelled(true);
-		}
-	}
-
-	@EventHandler
 	public void onPlayerClickSign(PlayerInteractEvent e) {
 		try {
 			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				Sign s = (Sign) e.getClickedBlock().getState();
 				if (s.getLine(0).equalsIgnoreCase("Welcome to")) {
-					e.getPlayer().sendMessage("§bWelcome " + ChatColor.RESET + e.getPlayer().getDisplayName() + "§b to " + ChatColor.DARK_PURPLE + ChatColor.BOLD + Utils.serverName());
-					e.getPlayer().sendMessage("§bDonate at " + ChatColor.RED + Utils.dPage());
+					e.getPlayer().sendMessage("§bWelcome " + ChatColor.RESET + e.getPlayer().getDisplayName() + "§b to " + ChatColor.DARK_PURPLE + ChatColor.BOLD + StringUtils.getServerName());
+					e.getPlayer().sendMessage("§bDonate at " + ChatColor.RED + StringUtils.getDonationPage());
 					e.getPlayer().sendMessage("§7Coder: §9TechnoPvP");
 				}
 			}
@@ -241,10 +232,10 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void SignChange(SignChangeEvent event) {
+	public void onSignChange(SignChangeEvent event) {
 		if (event.getLine(0).equalsIgnoreCase("[Welcome]")) {
 			event.setLine(0, "Welcome to");
-			event.setLine(1, ChatColor.BLUE + Utils.serverName());
+			event.setLine(1, ChatColor.BLUE + StringUtils.getServerName());
 			event.setLine(2, "§cClick Here");
 
 		}
@@ -252,7 +243,7 @@ public class PlayerListener extends CommonCore implements Listener {
 
 	@SuppressWarnings("unused")
 	@EventHandler(priority = EventPriority.MONITOR)
-	public void SignColor(SignChangeEvent event) {
+	public void onSignColor(SignChangeEvent event) {
 		if (!event.getPlayer().hasPermission("signcolor.yes")) return;
 
 		Block block = event.getBlock();
@@ -273,7 +264,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void RandomMine(BlockBreakEvent event) {
+	public void onRandomMineChance(BlockBreakEvent event) {
 		if (Utils.getChance(18)) {
 			if (event.getBlock().getType().equals(Material.IRON_ORE)) {
 				event.getBlock().setType(Material.AIR);
@@ -306,7 +297,7 @@ public class PlayerListener extends CommonCore implements Listener {
 	}
 
 	@EventHandler
-	public void AboveNetherInteract(PlayerInteractEvent event) {
+	public void onAboveNetherInteract(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 		if (plugin.getConfig().getBoolean("allow-above-nether") != true) {
 			if (player.getWorld().getEnvironment().equals(World.Environment.NETHER)) {

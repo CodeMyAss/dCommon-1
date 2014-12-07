@@ -26,12 +26,18 @@ public class InitializeManager {
 	public InitializeManager() {
 		plugin.ghostManager = new GhostManager(plugin);
 
-		loadAnnouncements();
-		clearGarbage();
-		getEvents();
-		setupVault();
+		registerEvents();
 		setUpConfigerationFiles();
+		loadAnnouncements();
+		setupVault();
+		clearGarbage();
 	}
+
+	/**
+	 * Set's up the configeration files.
+	 *
+	 * @see InitializeManager#setUpConfigerationFiles()
+	 */
 
 	public void setUpConfigerationFiles() {
 		/* Genrates the 'playerdata'(users) folder. */
@@ -51,7 +57,13 @@ public class InitializeManager {
 		plugin.saveDefaultConfig();
 	}
 
-	public void getEvents() {
+	/**
+	 * Registers all the listeners, and events.
+	 *
+	 * @see InitializeManager#registerEvents()
+	 */
+
+	public void registerEvents() {
 		plugin.pluginmanager = plugin.getServer().getPluginManager();
 
 		plugin.pluginmanager.registerEvents(new RespawnListener(), plugin);
@@ -63,9 +75,22 @@ public class InitializeManager {
 		plugin.pluginmanager.registerEvents(new ChatListener(), plugin);
 	}
 
+	/**
+	 * Loags all the anouncements from the <br>
+	 * announcer class.
+	 *
+	 * @see InitializeManager#loadAnnouncements()
+	 */
+
 	public void loadAnnouncements() {
 		AnnouncerManager.startAnnouncements();
 	}
+
+	/**
+	 * Clears all un-necessary entites.
+	 *
+	 * @see InitializeManager#clearGarbage()
+	 */
 
 	public void clearGarbage() {
 		/* Clear all mid-exploding tnt */
@@ -78,6 +103,12 @@ public class InitializeManager {
 		}
 
 	}
+
+	/**
+	 * Set up vault integration.
+	 *
+	 * @see InitializeManager#setupVault()
+	 */
 
 	public void setupVault() {
 		VaultBridge.getInstance().setupAll(true, true, true);

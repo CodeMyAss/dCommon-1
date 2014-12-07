@@ -5,7 +5,7 @@ import java.lang.annotation.RetentionPolicy;
 
 import me.technopvp.common.dCommon;
 import me.technopvp.common.commands.CommonCommand;
-import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.managers.MessageManager;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -23,7 +23,7 @@ public @interface Permissions {
         MOD("dcommon.mod"),
         ADMIN("dcommon.admin"),
         OWNER("dcommon.owner");
-        
+
         private String permission;
 
         public String getPermission() {
@@ -50,7 +50,7 @@ public @interface Permissions {
             try {
                 permissions = commandClass.getAnnotation(Permissions.class);
             } catch (NullPointerException e) {
-                Utils.log(Level.HIGH, "Command " + commandClass.getName() + " doesn't have permissions set!");
+                MessageManager.log(Level.HIGH, "Command " + commandClass.getName() + " doesn't have permissions set!");
                 return true;
             }
 

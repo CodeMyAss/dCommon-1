@@ -36,7 +36,6 @@ public class Lists  {
 	/*
 	 * HashMap's
 	 */
-	public static HashMap<String, Boolean> muted = new HashMap<String, Boolean>();
 	public static Map<String, Long> slowtime = new HashMap<String, Long>();
 	public static Map<String, ChatColor> chatcolor = new HashMap<String, ChatColor>();
 	public static HashMap<String, String> reply = new HashMap<String, String>();
@@ -47,7 +46,7 @@ public class Lists  {
 	 *
 	 * Boolean's
 	 */
-   	public static boolean muteall = false;
+   	public static boolean chatMuted = false;
    	public static boolean locked = false;
    	public static boolean slowchat = false;
    	public static boolean slowstop = false;

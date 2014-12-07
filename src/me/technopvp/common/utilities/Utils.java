@@ -8,7 +8,6 @@ import java.util.Locale;
 import java.util.Random;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utilities.enums.Level;
 import net.minecraft.util.org.apache.commons.lang3.Validate;
 
 import org.bukkit.ChatColor;
@@ -47,35 +46,18 @@ public abstract class Utils {
 	    return permission;
 	  }
 
-	public static boolean log(Level level, String string) {
-		switch(level) {
-		case FATAL:
-			plugin.getServer().getConsoleSender().sendMessage("" + ChatColor.RED + ChatColor.BOLD + "FATAL ERROR " + ChatColor.GREEN + string);
-			break;
-		case HIGH:
-			plugin.getServer().getConsoleSender().sendMessage(ChatColor.RED + "HIGH " + ChatColor.YELLOW + string);
-			break;
-		case MEDIUM:
-			plugin.getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "MEDIUM " + ChatColor.WHITE + string);
-		case LOW:
-			plugin.getServer().getConsoleSender().sendMessage(ChatColor.WHITE + "LOW " + ChatColor.RESET + string);
-			break;
-		}
-		return true;
-	}
-
 	public static void kickPlayer(Player player, String reason, String by, boolean server) {
-		player.kickPlayer("§c§nYou have been kicked" + (server == true ? " from " + StringUtils.servername() : "") + "." + "\n"
+		player.kickPlayer("§c§nYou have been kicked" + (server == true ? " from " + StringUtils.getServerName() : "") + "." + "\n"
         		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + (reason == null ? "Unspecified" : reason)
         		  + "\n§7Kicked By: " + ChatColor.RED + ChatColor.BOLD + (by == null ? "Staff Memeber" :  by)
-        		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + StringUtils.website());
+        		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + StringUtils.getWebsite());
 	}
 
 	public static void kickPlayer(Player player, String reason, String by) {
-		player.kickPlayer("§c§nYou have been kicked from " + StringUtils.servername() + "." + "\n"
+		player.kickPlayer("§c§nYou have been kicked from " + StringUtils.getServerName() + "." + "\n"
         		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + (reason == null ? "Unspecified" : reason)
         		  + "\n§7Kicked By: " + ChatColor.RED + ChatColor.BOLD + (by == null ? "Staff Memeber" :  by)
-        		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + StringUtils.website());
+        		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + StringUtils.getWebsite());
 	}
 
 	public static String getTime() {
@@ -164,17 +146,4 @@ public abstract class Utils {
 	    item.setItemMeta(itemStackMeta);
 	    return true;
 	  }
-
-	public static String dPage() {
-		return plugin.getConfig().getString("donation-page");
-	}
-
-	public static String website() {
-		return plugin.getConfig().getString("website");
-	}
-
-	public static String serverName() {
-		return plugin.getConfig().getString("server-name");
-	}
-
 }

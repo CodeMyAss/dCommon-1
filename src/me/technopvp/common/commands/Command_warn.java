@@ -1,9 +1,9 @@
 package me.technopvp.common.commands;
 
 import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Source;
 import me.technopvp.common.utilities.enums.SourceType;
-import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.player.Ban;
 import me.technopvp.common.utilities.player.User;
 
@@ -24,7 +24,7 @@ public class Command_warn extends CommonCommand {
 			noPermission();
 			return true;
 		}
-		
+
 		if (args.length < 1) {
 			showUsage(cmd);
 			return true;
@@ -67,7 +67,7 @@ public class Command_warn extends CommonCommand {
 				return true;
 				}
 			}
-			
+
 		Player target = Bukkit.getPlayer(args[0]);
 		if (target == null) {
 			targetOffline(args[0]);
@@ -78,42 +78,42 @@ public class Command_warn extends CommonCommand {
 					(User.getWarnedLevel(target.getName()) < 5 ? User
 							.getWarnedLevel(target.getName()) + 1 : User
 							.getWarnedLevel(target.getName())), reason, sender.getName());
-		
+
 		if (User.getWarnedLevel(target.getName()) == 1) {
 			target.sendMessage("" + Red + Bold + "You have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n");
-			target.sendMessage("\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason 
-	        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Message Warning" 
+			target.sendMessage("\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason
+	        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Message Warning"
 	        		  + "\n§7Warned By: " + ChatColor.RED + ChatColor.BOLD + player.getName()
 	        		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + plugin.getConfig().getString("config.Website"));
 			return true;
 		}
 		if (User.getWarnedLevel(target.getName()) == 2) {
-			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n" 
-        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason 
-        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "First Kick" 
+			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n"
+        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason
+        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "First Kick"
         		  + "\n§7Warned By: " + ChatColor.RED + ChatColor.BOLD + player.getName()
         		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + plugin.getConfig().getString("config.Website"));
 			return true;
 		}
 		if (User.getWarnedLevel(target.getName()) == 3) {
-			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n"  
+			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n"
 					+ Red + Bold + "\nThis is your last warning before you are banned."
-        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason 
-        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Last Kick" 
+        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason
+        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Last Kick"
         		  + "\n§7Warned By: " + ChatColor.RED + ChatColor.BOLD + player.getName()
         		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + plugin.getConfig().getString("config.Website"));
 			return true;
 		}
 		if (player.hasPermission("warn.*") || player.isOp()  || player.hasPermission("warn.level.4")) {
 		if (User.getWarnedLevel(target.getName()) == 4) {
-			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n"  
-        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason 
-        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Ban" 
+			player.kickPlayer("§c§nYou have been warned. Warning Level: " + User.getWarnedLevel(target.getName()) + "\n"
+        		  + "\n§7Reason: " + ChatColor.RED + ChatColor.BOLD + reason
+        		  + "\n§7Punishment: " + ChatColor.RED + ChatColor.BOLD + "Ban"
         		  + "\n§7Warned By: " + ChatColor.RED + ChatColor.BOLD + player.getName()
         		  + "\n§7Appeal at: " + ChatColor.RED + ChatColor.BOLD + plugin.getConfig().getString("config.Website"));
 			User.getUserConfig(target.getName()).set("Warn", null);
 			User.getUser(target.getName()).getPlayerConfig().savePlayerConfig();
-			new Ban(target.getName(), reason.toString(), player.getName());
+			new Ban(target, reason.toString(), player.getName());
 			target.setBanned(true);
 			return true;
 		}

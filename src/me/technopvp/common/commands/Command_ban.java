@@ -2,11 +2,12 @@ package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
 import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Source;
 import me.technopvp.common.utilities.enums.SourceType;
-import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.player.Ban;
 
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -20,40 +21,22 @@ public class Command_ban extends CommonCommand {
 
 	@SuppressWarnings("deprecation")
 	public boolean run(CommandSender sender, Command cmd, String[] args) {
-        if (!sender.hasPermission("ban.yes")) {
-            noPermission();
-            return true;
-        }
-        if (args.length == 0) {
-          showUsage(cmd);
-          return true;
-        }
-        OfflinePlayer target = Bukkit.getServer().getOfflinePlayer(args[0]);
-        String msg = "";
-        if (args.length > 1) {
-            msg = "";
-            for (int i = 1; i < args.length; i++) {
-                msg += args[i] + " ";
-            }
-        }
-//        if (Utils.isVip(target.getPlayer())) {
-//        	sender.sendMessage(plugin.usage);
-//        	sender.sendMessage(ChatColor.GRAY + "You are not allowed to ban " + target.getName());
-//        	return true;
-//        }
-        if (args.length == 1) {
-        	 new Ban(target.getName(), "Unspecified", sender.getName());
-        	if (target.isOnline()) target.getPlayer().kickPlayer(ChatColor.RED + "You have been banned by " + sender.getName());
-        	if (target.isOnline()) target.getPlayer().setHealth(0);
-        	target.setBanned(true);
-        	return true;
-        }
-        if (args.length >= 2) {
-        	new Ban(target.getName(), msg, sender.getName());
-            if (target.isOnline()) target.getPlayer().kickPlayer(ChatColor.RED + "You have been banned by " + sender.getName() + " for " + msg);
-            if (target.isOnline()) target.getPlayer().setHealth(0);
-            target.setBanned(true);
-            return true;
+		if (!sender.hasPermission("ban.yes")) {
+			noPermission();
+			return true;
+		}
+		if (args.length == 0) {
+			showUsage(cmd);
+			return true;
+		}
+		if (args.length >= 1) {
+			OfflinePlayer target = Bukkit.getServer().getOfflinePlayer(args[0]);
+			String reason = StringUtils.join(args, ' ', 1, args.length);
+
+			new Ban(target, (reason.isEmpty() ? "Unspecified": reason), sender.getName());
+			if (target.isOnline()) target.getPlayer().kickPlayer(ChatColor.RED + "You have been banned by " + sender.getName() + (!reason.isEmpty() ? " for " + reason : "") + ".");
+			if (target.isOnline()) target.getPlayer().setHealth(0);
+			return true;
 		}
 		return true;
 	}

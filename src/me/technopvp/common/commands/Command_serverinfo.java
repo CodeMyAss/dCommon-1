@@ -1,11 +1,11 @@
 package me.technopvp.common.commands;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.utilities.StringUtils;
 import me.technopvp.common.utilities.enums.Permissions;
+import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Source;
 import me.technopvp.common.utilities.enums.SourceType;
-import me.technopvp.common.utilities.enums.Permissions.Permission;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -27,7 +27,7 @@ public class Command_serverinfo extends CommonCommand {
 		Website = Website.replaceAll("&", "§");
 		Website = Website.replaceAll("%player", player.getName());
 		player.sendMessage(Gray + "Website: " + Blue + Website);
-		player.sendMessage(ChatColor.GRAY + "Donation Page: " + Blue + Utils.dPage());
+		player.sendMessage(ChatColor.GRAY + "Donation Page: " + Blue + StringUtils.getDonationPage());
 		String Account = plugin.getConfig().getString("account");
 		Account = Account.replaceAll("&", "§");
 		Account = Account.replaceAll("%player", player.getName());

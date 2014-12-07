@@ -1,8 +1,10 @@
 package me.technopvp.common.managers;
 
+import me.technopvp.common.dCommon;
 import me.technopvp.common.utilities.CommonCore;
 import me.technopvp.common.utilities.StringUtils;
 import me.technopvp.common.utilities.enums.BroadcastType;
+import me.technopvp.common.utilities.enums.Level;
 import me.technopvp.common.utilities.enums.Permissions.Permission;
 import me.technopvp.common.utilities.enums.Permissions.PermissionUtils;
 
@@ -13,6 +15,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class MessageManager extends CommonCore {
+	static dCommon plugin = dCommon.instance;
 
 	/**
 	 * @param sender
@@ -177,4 +180,29 @@ public class MessageManager extends CommonCore {
 	public static void broadcastWPermissionLevel(Permission permissionLevel, String message) {
 			broadcastWPermissionLevel(permissionLevel, message);
 		}
+
+
+	/**
+	 * @param level
+	 *            - The level of atire it will be logged at.
+	 * @param message
+	 *            - The string, that will be sent.
+	 *
+	 * @see MessageManager#log(level, message)
+	 */
+
+	public static void log(Level level, String message) {
+		plugin.getServer().getConsoleSender().sendMessage(level.getPrefix() + message);
+	}
+
+	/**
+	 * @param message
+	 *            - The string, that will be sent.
+	 *
+	 * @see MessageManager#log(message)
+	 */
+
+	public static void log(String message) {
+		plugin.log.info(message);
+	}
 }

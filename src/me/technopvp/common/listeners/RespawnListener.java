@@ -12,7 +12,7 @@ public class RespawnListener implements Listener {
 	dCommon plugin = dCommon.instance;
 
 	@EventHandler
-	public void RespawnLocation(PlayerRespawnEvent event) {
+	public void onPlayerRespawnEvent(PlayerRespawnEvent event) {
 		Player player = event.getPlayer();
 		for (String configs : SpawnConfig.getInstance().getSpawnConfig().getConfigurationSection("spawns").getKeys(false)) {
 		if (!configs.contains(plugin.permission.getPrimaryGroup(player))) {

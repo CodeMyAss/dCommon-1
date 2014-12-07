@@ -5,10 +5,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 
-/**
- * This class is provided as an easy way to handle repeating scheduled tasks. Do not use scheduleSyncRepeatingTask as when a new instance of this class is created, it automatically schedules one. Just create a new intstance.
- * @author KingFaris10
- */
 public abstract class SpawnManager extends BukkitRunnable {
 
 	private int repeatableTaskID = 0;
@@ -17,7 +13,7 @@ public abstract class SpawnManager extends BukkitRunnable {
 
 	/**
 	 * Create a new Repeatable Runnable that runs until the maximum amount of repeats. This will automatically schedule a repeating task.
-	 * 
+	 *
 	 * @param scheduler - The Scheduler of the server.
 	 * @param yourPlugin - Your plugin object.
 	 * @param delay - Delay in server ticks before executing first repeat.

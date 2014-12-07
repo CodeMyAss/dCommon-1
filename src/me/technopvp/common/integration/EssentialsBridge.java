@@ -1,7 +1,7 @@
 package me.technopvp.common.integration;
 
 import me.technopvp.common.dCommon;
-import me.technopvp.common.utilities.Utils;
+import me.technopvp.common.managers.MessageManager;
 import me.technopvp.common.utilities.enums.Level;
 
 import org.anjocaido.groupmanager.GroupManager;
@@ -24,32 +24,30 @@ public class EssentialsBridge {
 	public static Essentials getEssentialsPlugin() {
 		if (essentialsPlugin == null) {
 			try {
-				final Plugin essentials = Bukkit.getServer().getPluginManager()
-						.getPlugin("Essentials");
+				final Plugin essentials = Bukkit.getServer().getPluginManager().getPlugin("Essentials");
 				if (essentials != null) {
 					if (essentials instanceof Essentials) {
 						essentialsPlugin = (Essentials) essentials;
 					}
 				}
 			} catch (Exception ex) {
-				Utils.log(Level.MEDIUM, "" + ex);
+				MessageManager.log(Level.MEDIUM, "" + ex);
 			}
 		}
 		return essentialsPlugin;
 	}
-	
+
 	public static GroupManager getGroupManagerPlugin() {
 		if (groupManagerPlugin == null) {
 			try {
-				final Plugin groupmanager = Bukkit.getServer().getPluginManager()
-						.getPlugin("GroupManager");
+				final Plugin groupmanager = Bukkit.getServer().getPluginManager().getPlugin("GroupManager");
 				if (groupmanager != null) {
 					if (groupmanager instanceof GroupManager) {
 						groupManagerPlugin = (GroupManager) groupmanager;
 					}
 				}
 			} catch (Exception ex) {
-				Utils.log(Level.MEDIUM, "" + ex);
+				MessageManager.log(Level.MEDIUM, "" + ex);
 			}
 		}
 		return groupManagerPlugin;
@@ -62,7 +60,7 @@ public class EssentialsBridge {
 				return essentials.getUserMap().getUser(username);
 			}
 		} catch (Exception ex) {
-			Utils.log(Level.MEDIUM, "" + ex);
+			MessageManager.log(Level.MEDIUM, "" + ex);
 		}
 		return null;
 	}
@@ -75,7 +73,7 @@ public class EssentialsBridge {
 				user.setDisplayNick();
 			}
 		} catch (Exception ex) {
-			Utils.log(Level.MEDIUM, "" + ex);
+			MessageManager.log(Level.MEDIUM, "" + ex);
 		}
 	}
 
@@ -86,7 +84,7 @@ public class EssentialsBridge {
 				return essentials.isEnabled();
 			}
 		} catch (Exception ex) {
-			Utils.log(Level.MEDIUM, "" + ex);
+			MessageManager.log(Level.MEDIUM, "" + ex);
 		}
 		return false;
 	}

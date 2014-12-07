@@ -6,13 +6,15 @@ import me.technopvp.common.dCommon;
 import me.technopvp.common.utilities.CommonCore;
 
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 public class Ban extends CommonCore {
 
 	dCommon plugin = dCommon.instance;
 
-	private String name, reason, bannedby;
+	private OfflinePlayer player;
+	private String reason, bannedby;
 
 	/**
 	 * Ban a player, for a reason, and who there banned by.
@@ -25,22 +27,24 @@ public class Ban extends CommonCore {
 	 *            Who the player is being banmned by.
 	 *
 	 */
-	public Ban(String name, String reason, String bannedby) {
+	@SuppressWarnings("deprecation")
+	public Ban(OfflinePlayer player, String reason, String bannedby) {
 		this.reason = reason;
 		this.bannedby = bannedby;
-		this.name = name;
+		this.player = player;
 
-		User.getUser(name).getPlayerConfig().getConfig().set("Ban.Banned", true);
-		User.getUser(name).getPlayerConfig().getConfig().set("Ban.Reason", reason.toString().trim());
-		User.getUser(name).getPlayerConfig().getConfig().set("Ban.BannedBy", bannedby);
-		User.getUser(name).getPlayerConfig().savePlayerConfig();
+		User.getUser(player.getName()).getPlayerConfig().getConfig().set("Ban.Banned", true);
+		User.getUser(player.getName()).getPlayerConfig().getConfig().set("Ban.Reason", reason.toString().trim());
+		User.getUser(player.getName()).getPlayerConfig().getConfig().set("Ban.BannedBy", bannedby);
+		User.getUser(player.getName()).getPlayerConfig().savePlayerConfig();
 
 		for (Player all : Bukkit.getOnlinePlayers()) {
-			all.sendMessage(Green + name + " has been banned by " + bannedby + (all.hasPermission("ban.yes") || all.isOp()
+			all.sendMessage(Green + player.getName() + " has been banned by " + bannedby + (all.hasPermission("ban.yes") || all.isOp()
 					? (reason == "Unspecified" ? (all.isOp()
 							? " for Unspecified." : ".")
 							: " for " + reason.trim() + ".") : "."));
 		}
+		player.setBanned(true);
 	}
 
 	/**
@@ -50,32 +54,29 @@ public class Ban extends CommonCore {
 	 *            The player you are checking.
 	 *
 	 */
+
 	public static Boolean isBanned(String player) {
-		if (User.getUser(player).getPlayerConfig().getConfig().getBoolean("Ban.Banned") == true) {
-			return true;
-		} else {
-			return false;
-		}
+		return (User.getUser(player).getPlayerConfig().getConfig().getBoolean("Ban.Banned"));
+	}
+
+	public static String getReason(String user) {
+		return User.getUser(user).getPlayerConfig().getConfig().getString("Ban.Reason");
 	}
 
 	public String getReason() {
 		return reason;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
+	public static String getBannedBy(String user) {
+		return User.getUser(user).getPlayerConfig().getConfig().getString("Ban.BannedBy");
 	}
 
 	public String getWhoBanned() {
 		return bannedby;
 	}
 
-	public void setWhoBanned(String bannedby) {
-		this.bannedby = bannedby;
-	}
-
-	public String getPlayer() {
-		return name;
+	public OfflinePlayer getPlayer() {
+		return player;
 	}
 
 	public enum BanInfo {

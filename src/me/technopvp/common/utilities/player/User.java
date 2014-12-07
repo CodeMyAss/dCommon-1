@@ -23,7 +23,7 @@ public class User {
 
 	/**
 	 * Grab the user, and the user settings.
-	 * 
+	 *
 	 * @param user
 	 *            - Gets the user.
 	 * @return The user options.
@@ -32,7 +32,11 @@ public class User {
 	public static User getUser(String user) {
 		return plugin.user.getUser(user);
 	}
-	
+
+	public User getUser() {
+		return plugin.user.getUser(user);
+	}
+
 	public static FileConfiguration getUserConfig(String user) {
 		return plugin.user.getUser(user).getPlayerConfig().getConfig();
 	}
@@ -84,10 +88,10 @@ public class User {
 		case BY:
 			return User.getUser(user).getPlayerConfig().getConfig().getString("BannedBy");
 		default:
-			return null;
+			return "Ban information not set.";
 		}
 	}
-	
+
 	public static int getWarnedLevel(String user) {
 		return getUserConfig(user).getInt("Warn.Warnings");
 	}
@@ -98,7 +102,7 @@ public class User {
 		getUser(user).getPlayerConfig().savePlayerConfig();
 	}
 
-		
+
 	public static boolean isBanned(String user) {
 		return (User.getUser(user).getPlayerConfig().getConfig().getBoolean("Banned"));
 	}
